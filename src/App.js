@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Login from './Containers/Login/login'
+import Signup from './Containers/Signup/signup'
+import Home  from './Containers/Home/home'
+import Store from './Config/Store'
+import {Provider} from "react-redux";
+import Router from './Config/Router/router'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={Store}>
+        <Router/>
+      </Provider>
     </div>
   );
 }
